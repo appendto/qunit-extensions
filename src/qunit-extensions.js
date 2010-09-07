@@ -1,6 +1,10 @@
 (function( QUnit, undefined ) {
 
-window.wait = QUnit.wait = function( condition, then, timeout ) {
+var expose = typeof exports === "undefined" || typeof require === "undefined" ?
+		window :
+		exports;
+
+expose.wait = QUnit.wait = function( condition, then, timeout ) {
 	var timer;
 	
 	if ( timeout ) {
